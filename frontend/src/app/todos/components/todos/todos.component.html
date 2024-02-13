@@ -1,0 +1,12 @@
+<div class="row mt-3">
+  <div class="col-sm-6">
+    <app-card title="Pendientes">
+      <app-todo-list (action)="handleAction($event)" [todos]="pendingTodos"></app-todo-list>
+    </app-card>
+  </div>
+  <div class="col-sm-6">
+    <app-card title="Completadas">
+      <app-todo-list (action)="handleAction($event)" [todos]="completedTodos"></app-todo-list>
+    </app-card>
+  </div>
+</div>

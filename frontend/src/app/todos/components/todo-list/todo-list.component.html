@@ -1,0 +1,44 @@
+<table class="table table-borderless">
+  <tbody>
+    @for (todo of todos; track todo.id; let i = $index) {
+    <tr>
+      <td>
+        <input
+          (click)="toggleTodo(todo.id)"
+          [checked]="isCompleted(todo.status)"
+          class="form-check-input"
+          type="checkbox"
+          (click)="toggleTodo(todo.id)"
+        />
+      </td>
+      <td
+        [ngClass]="{'text-decoration-line-through': isCompleted(todo.status) }"
+      >
+        {{ todo.description }}
+      </td>
+      <td class="text-end">
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic mixed styles example"
+        >
+          <button
+            (click)="deleteTodo(todo.id)"
+            type="button"
+            class="btn btn-danger"
+          >
+            Eliminar
+          </button>
+          <button
+            (click)="updateTodo(todo.id)"
+            type="button"
+            class="btn btn-success"
+          >
+            Editar
+          </button>
+        </div>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

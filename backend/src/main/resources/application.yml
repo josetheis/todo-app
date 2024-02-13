@@ -1,0 +1,8 @@
+spring:
+  output.ansi.enabled: ALWAYS
+  jpa:
+    generate-ddl: true
+server:
+  port: 8080
+  servlet:
+    contextPath: /api

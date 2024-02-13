@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Editar Descripcion</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-describedby="modal-title"
+    (click)="modal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form">
+    <label for="descriptionForm" class="form-label">Nueva Descripcion</label>
+    <textarea formControlName="description" class="form-control" id="descriptionForm" rows="3"></textarea>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-secondary"
+    (click)="modal.dismiss()"
+  >
+    Cancelar
+  </button>
+  <button
+    type="button"
+    [disabled]="form.invalid"
+    class="btn btn-success"
+    (click)="submit()"
+  >
+    Guardar
+  </button>
+</div>

@@ -1,0 +1,4 @@
+<div>
+  <app-create-todo-form class="mt-3" (create)="createTodo($event)"></app-create-todo-form>
+  <app-todos (action)="handleTodoListAction($event)" [todos]="todos"></app-todos>
+</div>
